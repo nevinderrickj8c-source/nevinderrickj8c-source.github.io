@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nevin Derrick J | Computer Science &amp; Design</title>
+<meta name="description" content="Portfolio of Nevin Derrick J, B.E. Computer Science and Design student at Easwari Engineering College.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090b19;--deep:#11162f;--red:#e8202f;--blue:#1f4fe0;--sky:#4d7bff;--yellow:#ffd60a;--paper:#f6f1e3;--ink:#000;
+--head:"Bangers","Impact","Arial Black",sans-serif;--body:"Comic Neue","Comic Sans MS",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--paper);font:400 1.1rem/1.65 var(--body);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.4rem;position:relative;z-index:2}
+section{position:relative;padding:5.5rem 0;overflow:hidden}
+
+/* halftone dots */
+.dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,var(--c,rgba(232,32,47,.5)) 2px,transparent 2.3px);background-size:16px 16px;-webkit-mask-image:linear-gradient(115deg,#000,transparent 55%);mask-image:linear-gradient(115deg,#000,transparent 55%)}
+.dots.b{--c:rgba(77,123,255,.45);-webkit-mask-image:linear-gradient(295deg,#000,transparent 55%);mask-image:linear-gradient(295deg,#000,transparent 55%)}
+
+/* headings */
+h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.04em;line-height:1}
+h2{font-size:clamp(2.6rem,7vw,4.6rem);color:var(--yellow);-webkit-text-stroke:2px #000;paint-order:stroke fill;text-shadow:5px 5px 0 var(--red);margin-bottom:.5rem}
+.kick{display:inline-block;font:400 1.15rem var(--head);letter-spacing:.12em;background:var(--red);color:#fff;padding:.15rem .8rem;border:3px solid #000;transform:rotate(-2deg);margin-bottom:1rem;box-shadow:4px 4px 0 #000}
+.lead{max-width:36rem;color:#cfd3ec;margin-bottom:2.6rem}
+
+/* comic panel */
+.panel{background:var(--deep);border:4px solid #000;box-shadow:8px 8px 0 #000;position:relative;transition:transform .25s,box-shadow .25s}
+.panel:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:12px 12px 0 var(--red)}
+.cap{display:inline-block;background:var(--yellow);color:#000;font:700 .85rem var(--body);letter-spacing:.06em;padding:.2rem .7rem;border:3px solid #000;text-transform:uppercase}
+
+/* buttons */
+.btn{display:inline-block;font:400 1.3rem var(--head);letter-spacing:.08em;text-decoration:none;color:#fff;background:var(--red);border:4px solid #000;padding:.55rem 1.5rem;box-shadow:5px 5px 0 #000;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #000;background:var(--blue)}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 #000}
+.btn.alt{background:var(--blue)}.btn.alt:hover{background:var(--red)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:1.2rem;padding:.7rem 1.4rem;background:var(--red);border-bottom:5px solid #000}
+nav .logo{font:400 1.7rem var(--head);letter-spacing:.08em;text-decoration:none;color:#fff;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;text-shadow:3px 3px 0 #000}
+nav ul{display:flex;gap:1.3rem;list-style:none;margin-left:auto}
+nav li a{font:400 1.15rem var(--head);letter-spacing:.08em;text-decoration:none;color:#fff;text-shadow:2px 2px 0 #000}
+nav li a:hover{color:var(--yellow)}
+
+/* hero */
+.hero{padding:4.5rem 0 6rem;background:linear-gradient(115deg,var(--blue) 0 44%,transparent 44.2%),linear-gradient(180deg,#0b1040,#090b19)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(90deg,#000 0 18px,var(--yellow) 18px 36px)}
+.grid2{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3.6rem,11vw,8rem);color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:7px 7px 0 var(--red);transform:rotate(-2deg);margin:.4rem 0 1.4rem}
+.hero h1 span{display:block;color:var(--yellow)}
+.bubble{position:relative;background:#fff;color:#000;border:4px solid #000;border-radius:1.6rem;padding:1rem 1.4rem;max-width:25rem;font-weight:700;margin:0 0 1.8rem 1.4rem;box-shadow:5px 5px 0 #000}
+.bubble::after{content:"";position:absolute;left:2rem;bottom:-1.5rem;width:1.8rem;height:1.8rem;background:#fff;border-right:4px solid #000;border-bottom:4px solid #000;transform:skewY(35deg) rotate(20deg)}
+.hero .btn+.btn{margin-left:.7rem}
+.photo{position:relative;aspect-ratio:4/5;max-width:24rem;margin:0 auto;transform:rotate(3deg);background:linear-gradient(158deg,var(--red) 0 56%,var(--blue) 56.2%);overflow:hidden}
+.photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:contrast(1.08) saturate(1.15)}
+.photo::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.25) 2px,transparent 2.4px);background-size:12px 12px}
+.photo::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:multiply;background-image:radial-gradient(circle,rgba(31,79,224,.65) 2px,transparent 2.4px);background-size:11px 11px;-webkit-mask-image:linear-gradient(0deg,#000,transparent 55%);mask-image:linear-gradient(0deg,#000,transparent 55%)}
+.photo .cap{position:absolute;left:.8rem;bottom:.8rem;z-index:2}
+.nophoto img{display:none}.nophoto::before{content:"NDJ";position:absolute;inset:0;display:grid;place-items:center;font:400 7rem var(--head);color:#fff;-webkit-text-stroke:3px #000;text-shadow:6px 6px 0 var(--blue);z-index:1}
+.swing{position:absolute;top:0;right:12%;width:0;height:46vh;transform-origin:top center;animation:sw 3.6s ease-in-out infinite alternate;z-index:1}
+.swing::before{content:"";position:absolute;top:0;left:-1px;width:2px;height:100%;background:rgba(255,255,255,.75)}
+.swing::after{content:"";position:absolute;bottom:-10px;left:-10px;width:20px;height:20px;border-radius:50%;background:var(--red);border:3px solid #000}
+@keyframes sw{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.web{position:absolute;width:20rem;height:20rem;color:rgba(255,255,255,.28);z-index:1;pointer-events:none}
+
+/* about */
+.about{background:var(--deep)}
+.grid3{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem}
+.about p{margin-bottom:1rem}
+.facts{display:grid;gap:1rem;align-content:start}
+.fact{padding:1rem 1.2rem}.fact b{display:block;font:400 .95rem var(--head);letter-spacing:.14em;color:var(--yellow)}.fact span{font-size:1.2rem;font-weight:700}
+
+/* skills */
+.skills{background:linear-gradient(180deg,var(--bg),#0d1230)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.8rem}
+.pw{padding:1.5rem}
+.pw h3{font-size:2rem;color:#fff;text-shadow:3px 3px 0 var(--blue);margin-bottom:.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:.55rem}
+.tags span{font:700 1rem var(--body);background:var(--paper);color:#000;border:3px solid #000;padding:.15rem .8rem;box-shadow:3px 3px 0 var(--red);transition:transform .15s}
+.tags span:hover{transform:translateY(-3px) rotate(-3deg)}
+
+/* certificates */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.8rem}
+.cert{padding:1.4rem;background:var(--paper);color:#000}
+.cert h3{font-size:1.7rem;margin:.7rem 0 .3rem;color:var(--blue)}
+.cert p{font-weight:700}
+
+/* projects */
+.projects{background:var(--deep)}
+.issues{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:2rem}
+.issue{display:flex;flex-direction:column;text-decoration:none;overflow:hidden}
+.cover{position:relative;aspect-ratio:4/3;display:grid;place-items:center;font:400 4.6rem var(--head);color:#fff;-webkit-text-stroke:3px #000;text-shadow:5px 5px 0 #000;border-bottom:4px solid #000;overflow:hidden}
+.cover::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.28) 2px,transparent 2.4px);background-size:12px 12px}
+.i1 .cover{background:linear-gradient(135deg,var(--red),#7a0c16)}.i2 .cover{background:linear-gradient(135deg,var(--blue),#0c1a66)}.i3 .cover{background:linear-gradient(135deg,var(--yellow),#e08a00);color:#fff}
+.cover b{position:absolute;top:.6rem;left:.6rem;font:700 .8rem var(--body);background:#fff;color:#000;border:3px solid #000;padding:.1rem .5rem;-webkit-text-stroke:0;text-shadow:none}
+.issue .body{padding:1.3rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
+.issue h3{font-size:1.8rem;color:var(--yellow)}
+.issue p{color:#cfd3ec;flex:1}
+.issue .tags span{font-size:.85rem;box-shadow:2px 2px 0 var(--blue)}
+.issue .btn{align-self:flex-start;margin-top:.6rem;font-size:1.1rem;padding:.35rem 1.1rem}
+
+/* featured project */
+.issues{grid-template-columns:1fr}
+.issue.feature{flex-direction:row}
+.feature .cover{flex:1.25;aspect-ratio:auto;min-height:20rem;border-bottom:0;border-right:4px solid #000}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature .cover::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply;background-image:radial-gradient(circle,rgba(31,79,224,.55) 2px,transparent 2.4px);background-size:12px 12px;-webkit-mask-image:linear-gradient(0deg,#000,transparent 45%);mask-image:linear-gradient(0deg,#000,transparent 45%)}
+.feature .cover b{z-index:2}
+.feature .body{flex:1;padding:1.8rem;gap:.8rem}
+.feature h3{font-size:2.3rem}
+.steps{list-style:none;display:grid;gap:.5rem;margin:.3rem 0}
+.steps li{display:flex;gap:.7rem;align-items:baseline;color:#e6e8f7}
+.steps b{flex:none;font:400 1.1rem var(--head);letter-spacing:.08em;background:var(--yellow);color:#000;border:3px solid #000;padding:0 .5rem}
+.next{margin-top:2rem;text-align:center;font:400 1.5rem var(--head);letter-spacing:.12em;color:var(--yellow);opacity:.85}
+/* contact */
+.contact{background:linear-gradient(115deg,var(--red) 0 30%,transparent 30.2%),#090b19}
+form{padding:1.8rem;display:grid;gap:1rem;max-width:34rem;background:var(--paper);color:#000}
+form label{font:400 1.2rem var(--head);letter-spacing:.08em;color:var(--blue)}
+form input,form textarea{width:100%;font:700 1.05rem var(--body);padding:.6rem .8rem;border:3px solid #000;background:#fff;color:#000}
+form input:focus,form textarea:focus{outline:0;box-shadow:4px 4px 0 var(--red)}
+.links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+footer{background:#000;text-align:center;padding:2.4rem 1rem;font-size:.95rem;color:#8d93b8;border-top:5px solid var(--red)}
+footer b{display:block;font:400 1.6rem var(--head);letter-spacing:.1em;color:var(--yellow);margin-bottom:.4rem}
+
+/* click bursts + reveal */
+.pop{position:fixed;z-index:200;pointer-events:none;font:400 2.2rem var(--head);color:var(--yellow);-webkit-text-stroke:2px #000;paint-order:stroke fill;padding:1.4rem 1.7rem;background:var(--red);clip-path:var(--burst);translate:-50% -50%;animation:pop .6s ease-out forwards}
+@keyframes pop{0%{transform:scale(.2) rotate(-12deg);opacity:1}60%{transform:scale(1.15) rotate(4deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:0}}
+.rv{opacity:0;transform:translateY(26px) scale(.96);transition:opacity .7s ease,transform .7s cubic-bezier(.2,1.2,.4,1)}
+.rv.in{opacity:1;transform:none}
+html:not(.js) .rv{opacity:1;transform:none}
+
+@media(max-width:820px){
+ nav ul{display:none}nav .btn{margin-left:auto}
+ .hero{background:linear-gradient(160deg,var(--blue) 0 30%,transparent 30.2%),#090b19}
+ .issue.feature{flex-direction:column}.feature .cover{min-height:14rem;border-right:0;border-bottom:4px solid #000}
+ .grid2,.grid3{grid-template-columns:1fr}.photo{max-width:18rem}
+ .hero .btn+.btn{margin:.8rem 0 0}.swing{display:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="web" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 0L200 200M0 60L140 200M0 130L70 200M60 0L200 140M130 0L200 70M0 0L200 100M0 0L100 200"/><path d="M0 28Q30 30 28 0M0 62Q62 64 62 0M0 100Q100 104 100 0M0 142Q142 146 142 0M0 188Q188 192 188 0"/></symbol></svg>
+
+<nav aria-label="Main">
+ <a class="logo" href="#top">NDJ</a>
+ <ul><li><a href="#about">Origin</a></li><li><a href="#skills">Powers</a></li><li><a href="#certs">Trophies</a></li><li><a href="#projects">Issues</a></li><li><a href="#contact">Signal</a></li></ul>
+ <a class="btn alt" href="#contact" style="font-size:1.1rem;padding:.3rem 1rem">Hire Me</a>
+</nav>
+
+<header class="hero" id="top">
+ <div class="dots b"></div>
+ <svg class="web" style="top:0;left:0"><use href="#web"/></svg>
+ <div class="swing" aria-hidden="true"></div>
+ <div class="wrap grid2">
+  <div>
+   <span class="kick">ISSUE #1: THE ORIGIN</span>
+   <h1>Nevin<span>Derrick J</span></h1>
+   <p class="bubble">Your friendly neighbourhood coder and designer, swinging between code and creativity!</p>
+   <p style="margin-bottom:1.8rem"><span class="cap">B.E. Computer Science &amp; Design · 2nd Year</span></p>
+   <a class="btn" href="#projects">See My Work</a><a class="btn alt" href="#contact">Send a Signal</a>
+  </div>
+  <div class="photo panel"><img src="photo.png" alt="Nevin Derrick J" onerror="this.parentElement.classList.add('nophoto')"><span class="cap">Nevin Derrick J</span></div>
+ </div>
+</header>
+
+<section class="about" id="about">
+ <div class="dots"></div>
+ <div class="wrap">
+  <span class="kick rv">PANEL 1</span>
+  <h2 class="rv">Origin Story</h2>
+  <div class="grid3">
+   <div class="rv">
+    <p>I’m Nevin, a second-year B.E. student in Computer Science and Design at Easwari Engineering College. I like the place where logic meets looks: code that works, and design that feels right.</p>
+    <p>I write in C, C++ and Java, build pages in HTML, and tell stories through video editing and motion graphics. I also speak confidently in front of a crowd and love breaking big problems into small, solvable pieces.</p>
+    <p>I’m looking for internships and projects where I can learn fast, build real things, and grow into a full stack developer.</p>
+   </div>
+   <div class="facts rv">
+    <div class="panel fact"><b>COLLEGE</b><span>Easwari Engineering College</span></div>
+    <div class="panel fact"><b>COURSE</b><span>B.E. Computer Science and Design</span></div>
+    <div class="panel fact"><b>YEAR</b><span>2nd Year</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="skills" id="skills">
+ <div class="wrap">
+  <span class="kick rv">PANEL 2</span>
+  <h2 class="rv">Super Powers</h2>
+  <p class="lead rv">Every hero has a toolkit. Here is mine.</p>
+  <div class="cols">
+   <div class="panel pw rv"><h3>Code Powers</h3><div class="tags"><span>C</span><span>C++</span><span>Java</span><span>HTML</span></div></div>
+   <div class="panel pw rv"><h3>Hero Skills</h3><div class="tags"><span>Public Speaking</span><span>Problem Solving</span><span>Design Thinking</span></div></div>
+   <div class="panel pw rv"><h3>Creative Gadgets</h3><div class="tags"><span>Video Editing</span><span>Motion Graphics</span><span>Full Stack Basics</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="certs">
+ <div class="dots b"></div>
+ <div class="wrap">
+  <span class="kick rv">PANEL 3</span>
+  <h2 class="rv">Trophy Room</h2>
+  <p class="lead rv">Certificates earned along the way.</p>
+  <div class="certs">
+   <div class="panel cert rv"><span class="cap">Certificate</span><h3>Full Stack Developer</h3><p>Maiyam</p></div>
+   <div class="panel cert rv"><span class="cap">Certificate</span><h3>Video Editing and Motion Graphics</h3><p>Maiyam</p></div>
+   <div class="panel cert rv"><span class="cap">Certificate</span><h3>HTML Essentials</h3><p>Cisco</p></div>
+   <div class="panel cert rv"><span class="cap">Certificate</span><h3>Java Programming Fundamentals</h3><p>Infosys</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="projects" id="projects">
+ <div class="wrap">
+  <span class="kick rv">PANEL 4</span>
+  <h2 class="rv">The Issues</h2>
+  <p class="lead rv">Each project is a comic issue. Issue #1 is on the stands now.</p>
+  <div class="issues">
+   <a class="panel issue feature i1 rv" href="https://github.com/nevinderrickj8c-source"><div class="cover"><b>ISSUE #1</b><img src="rover.jpg" alt="Prototype rover with ESP32, GPS module and sensors on a railway track"></div><div class="body"><h3>Contactless Railway Track Crack Detection System</h3><p>A small, contactless prototype vehicle that moves along a railway track and uses infrared and ultrasonic sensors to spot a possible crack or gap. When it finds one, it stops at that point, sounds a local alarm and sends an SMS alert through a GSM module saying a crack has been detected.</p><ul class="steps"><li><b>1</b>Scan the track with IR and ultrasonic sensors</li><li><b>2</b>Stop at the gap and sound the alarm</li><li><b>3</b>Send an SMS alert via the GSM module</li></ul><div class="tags"><span>C++</span><span>ESP32</span><span>GPS Module</span><span>IR Sensors</span><span>Ultrasonic</span><span>GSM</span><span>Hardware</span></div><span class="btn">Read the Case</span></div></a>
+  </div>
+  <p class="next rv">TO BE CONTINUED... ISSUE #2 COMING SOON</p>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <span class="kick rv">THE FINAL PANEL</span>
+  <h2 class="rv">Send a Signal</h2>
+  <p class="lead rv">Open to internships and collaborations. Write to me and I’ll swing back with a reply.</p>
+  <form class="panel rv" id="f">
+   <div><label for="n">Your name</label><input id="n" required autocomplete="name"></div>
+   <div><label for="e">Your email</label><input id="e" type="email" required autocomplete="email"></div>
+   <div><label for="m">Message</label><textarea id="m" rows="4" required></textarea></div>
+   <button class="btn" type="submit">Send Message</button>
+  </form>
+  <div class="links rv">
+   <a class="btn alt" href="mailto:nevinderrickj8c@gmail.com">Email</a>
+   <a class="btn" href="https://github.com/nevinderrickj8c-source">GitHub</a>
+   <a class="btn alt" href="https://www.linkedin.com/in/nevin-derrick-j-096941381/">LinkedIn</a>
+  </div>
+ </div>
+</section>
+
+<footer><b>TO BE CONTINUED...</b>&copy; 2026 Nevin Derrick J. A fan-made comic tribute.</footer>
+
+<script>
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // starburst shape for click effects
+ var pts=[],i;for(i=0;i<24;i++){var a=i*Math.PI/12,r=i%2?38:50;pts.push((50+r*Math.cos(a)).toFixed(1)+'% '+(50+r*Math.sin(a)).toFixed(1)+'%')}
+ document.documentElement.style.setProperty('--burst','polygon('+pts.join(',')+')');
+ // reveal on scroll
+ var rv=[].slice.call(document.querySelectorAll('.rv'));
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});rv.forEach(function(e){io.observe(e)})}else rv.forEach(function(e){e.classList.add('in')});
+ // comic sound effects on click
+ if(!reduce){var W=['POW!','BAM!','ZAP!','THWIP!','WHAM!'];
+  document.addEventListener('click',function(e){var p=document.createElement('span');p.className='pop';p.textContent=W[Math.floor(Math.random()*W.length)];p.style.left=e.clientX+'px';p.style.top=e.clientY+'px';document.body.appendChild(p);setTimeout(function(){p.remove()},650)})}
+ // contact form opens your mail app with the message filled in
+ document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+  var n=document.getElementById('n').value,em=document.getElementById('e').value,m=document.getElementById('m').value;
+  location.href='mailto:nevinderrickj8c@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\nFrom: '+n+' ('+em+')')});
+})();
+</script>
+</body>
+</html>
